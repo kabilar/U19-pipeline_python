@@ -1,8 +1,8 @@
 import re
 import pathlib
+from u19_pipeline import ephys_pipeline
 
-from u19_pipeline import ephys
-from u19_pipeline.ephys import (probe_element, ephys_element,
+from u19_pipeline.ephys_pipeline import (probe_element, ephys_element,
                                         get_ephys_root_data_dir, get_session_directory)
 from element_array_ephys.readers import spikeglx
 
@@ -34,6 +34,8 @@ def process_session(sess_key):
     sess_dir = pathlib.Path(get_session_directory(sess_key))
     ephys_meta_filepaths = [fp for fp in sess_dir.rglob('*.ap.meta')]
 
+    print('sess_dir', 'sess_dir', sess_dir)
+
     if not len(ephys_meta_filepaths):
         print(f'No SpikeGLX data found for session:{sess_key} - at {sess_dir}')
         return
@@ -57,5 +59,5 @@ def process_session(sess_key):
 
 
 if __name__ == '__main__':
-    for sess_key in ephys.EphysSession.fetch('KEY'):
+    for sess_key in ephys_pipeline.EphysPipelineSession.fetch('KEY'):
         process_session(sess_key)
