@@ -1,4 +1,4 @@
-FROM datajoint/jupyter:python3.6
+FROM datajoint/djlab:py3.8-debian
 
 RUN pip uninstall -y datajoint
 RUN pip install datajoint
