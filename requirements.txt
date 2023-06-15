@@ -2,10 +2,10 @@ globus-cli
 globus-timer-cli==0.2.9
 scipy
 python-dotenv
-datajoint
-element-calcium-imaging>=0.2.0
-element-array-ephys>=0.1.4
-element-interface @ git+https://github.com/datajoint/element-interface.git
+datajoint>=0.13.4
+element-calcium-imaging
+element-array-ephys
+element-interface
 #ecephys_spike_sorting @ git+https://github.com/AllenInstitute/ecephys_spike_sorting.git
 ecephys_spike_sorting @ git+https://github.com/jenniferColonell/ecephys_spike_sorting.git
 scanreader @ git+https://github.com/atlab/scanreader.git
